@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DIGITAL CLOCK</title>
+        <link rel="stylesheet"  href="clock.css">
+        
+    </head>
+    <body>
+        <div id="digitalclock" class="clock"></div>
+        <script type="text/javascript">
+          function showTime(){  var date = new Date();
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            var ms = date.getMilliseconds();
+            var session = "AM";
+
+            if(h==0){
+                h=12;
+            }
+            if (h>12){
+                h=h-12;
+                session ="PM"
+            }
+            if(h<10){
+                h="0"+h;}
+            if(m<10){
+                m="0"+m; }
+                if(s<10){
+                m="0"+s; }
+
+
+            document.getElementById("digitalclock").innerHTML=h+":"+m+":"+s+":"+ms+session; 
+            setTimeout(showTime,100);
+          }
+          showTime();
+            </script>
+
+    </body>
+
+</html>
